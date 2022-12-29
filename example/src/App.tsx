@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply, Hello } from 'good-ui';
+import { multiply, Hello, Spacer } from 'react-native-good-ui';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
@@ -13,6 +13,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Hello />
+
+      <Spacer direction={'both'} preset={'huge'} />
 
       <Text>Result: {result}</Text>
     </View>
