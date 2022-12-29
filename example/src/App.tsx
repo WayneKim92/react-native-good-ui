@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'good-ui';
+import { multiply, Hello } from 'good-ui';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
@@ -12,6 +12,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Hello />
+
       <Text>Result: {result}</Text>
     </View>
   );
