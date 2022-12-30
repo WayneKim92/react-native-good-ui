@@ -5,17 +5,24 @@ good UI that supports react-native based android, ios and web
 ## Installation
 
 ```sh
-npm install good-ui
+yarn add react-native-good-ui
+# or
+npm install react-native-good-ui
 ```
 
 ## Usage
 
-```js
-import { multiply } from 'good-ui';
+```jsx
+import { View, Text } from 'react-native';
+import { Spacer } from 'good-ui';
 
-// ...
-
-const result = await multiply(3, 7);
+function AComponent() {
+  <View>
+    <Text>Hello World</Text>
+    <Spacer preset={'huge'}/>
+    <Text>Hello Wayne</Text>
+  </View>
+}
 ```
 
 ## Contributing
