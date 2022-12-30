@@ -1,7 +1,5 @@
 /**
- * The Spacer component is responsible for handling the space UI.
- * This component can create 3 types of spaces that is flex, preset and pixel type.
- * You should avoid using "size" prop that allow input in units of pixels for coherent spatial processing.
+ * If you non-experienced jsDoc, refer to https://devhints.io/jsdoc
  */
 
 import React from 'react';
@@ -10,6 +8,10 @@ import { Spacing, spacing } from '../../theme';
 import { isNilOrEmpty } from '../../utils';
 
 interface SpacerDirection {
+  /**
+   * direction prop determines the direction of the Spacer.
+   * @default: 'both'
+   */
   direction?: 'both' | 'vertical' | 'horizontal';
 }
 
@@ -28,7 +30,7 @@ interface FlexSpacerProps extends SpacerDirection {
 
 interface PresetSpacerProps extends SpacerDirection {
   /**
-   * preset Type is joint 1st place priority.
+   * preset type is joint 1st place priority.
    */
   preset: Spacing;
   /**
@@ -53,6 +55,11 @@ interface SizeSpacerProps extends SpacerDirection {
 
 type SpacerProps = PresetSpacerProps | FlexSpacerProps | SizeSpacerProps;
 
+/**
+ * The Spacer component is responsible for handling the space UI.
+ * This component can create 3 types of spaces that is flex, preset and size type.
+ * You should avoid using "size" prop that allow input in units of "pixels" for coherent spatial processing.
+ */
 export function Spacer(props: SpacerProps) {
   const { direction = 'both', flex, preset, size: pixelSize, ...rest } = props;
 
