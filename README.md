@@ -15,6 +15,7 @@ npm install react-native-good-ui
 ```jsx
 import { View, Text } from 'react-native';
 import { Spacer } from 'good-ui';
+import { load, save, clean, loadString, saveString, remove } from 'good-ui';
 
 function AComponent() {
   <View>
