@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export { Spacer } from './components';
+export * from './components';
+export * from './utils';
 
 export function multiply(a: number, b: number): Promise<number> {
   return Promise.resolve(a * b);
