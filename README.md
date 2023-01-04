@@ -2,12 +2,17 @@
 
 good UI that supports react-native based android, ios and web
 
+## Requirement
+```sh
+# Enter commend in root directory at your react-native project
+# If you want to use it in Web, refer to https://docs.expo.dev/versions/latest/sdk/reanimated/
+yarn add react-native-reanimated
+```
+
 ## Installation
 
 ```sh
 yarn add react-native-good-ui
-# or
-npm install react-native-good-ui
 ```
 
 ## Usage
