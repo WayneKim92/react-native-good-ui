@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { generateRound, generateShadow } from '../../utils/styles';
 
+import type { ReactElement } from 'react';
 import type { ViewStyle, FlexStyle } from 'react-native';
 import type { AnimatedStyle } from 'react-native-reanimated/lib/types';
 import type { Round } from '../../theme/round';
@@ -16,7 +17,7 @@ interface NonAnimatedFlexProps {
   elevation?: IntRange<1, 25>;
   round?: Round;
   roundShape?: RoundShape;
-  children?: Element | Element[] | undefined;
+  children?: Element | Element[] | ReactElement | ReactElement[] | undefined;
   justifyContent?: FlexStyle['justifyContent'];
   alignItems?: FlexStyle['justifyContent'];
   flexBasis?: FlexStyle['flexBasis'];
