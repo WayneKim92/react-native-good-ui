@@ -33,6 +33,7 @@ interface AnimatedFlexProps
 
 export type FlexProps = NonAnimatedFlexProps | AnimatedFlexProps;
 
+// TODO: add insets prop to set padding.
 export function Flex(props: FlexProps) {
   const {
     animatable = false,

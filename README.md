@@ -13,16 +13,22 @@ npm install react-native-good-ui
 ## Usage
 
 ```jsx
-import { View, Text } from 'react-native';
-import { Spacer } from 'good-ui';
-import { load, save, clean, loadString, saveString, remove } from 'good-ui';
+import { Text } from 'react-native';
+
+import { Spacer, Column, Row } from 'react-native-good-ui';
+import { storage } from 'react-native-good-ui';
 
 function AComponent() {
-  <View>
+  <Column>
     <Text>Hello World</Text>
+
     <Spacer preset={'huge'}/>
-    <Text>Hello Wayne</Text>
-  </View>
+
+    <Row>
+      <Text>Hello</Text>
+      <Text>Wayne</Text>
+    </Row>
+  </Column>
 }
 ```
 
