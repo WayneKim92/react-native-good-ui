@@ -1,11 +1,11 @@
 /**
- Use these spacings for margins/paddings and other whitespace throughout your app.
+ * Use these spacings for margins/paddings and other whitespace throughout your app.
  */
 export const spacing = {
   micro: 2,
   tiny: 4,
-  extraSmall: 8,
-  small: 12,
+  small: 8,
+  extraSmall: 12,
   medium: 16,
   large: 24,
   extraLarge: 32,

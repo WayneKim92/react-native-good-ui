@@ -63,8 +63,7 @@ type SpacerProps = PresetSpacerProps | FlexSpacerProps | SizeSpacerProps;
 export function Spacer(props: SpacerProps) {
   const { direction = 'both', flex, preset, size: pixelSize, ...rest } = props;
 
-  // @ts-ignore
-  const presetSize = spacing[preset];
+  const presetSize = preset ? spacing[preset] : undefined;
   const value = presetSize ? presetSize : pixelSize;
 
   const style: ViewStyle = {
