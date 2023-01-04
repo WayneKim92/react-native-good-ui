@@ -133,8 +133,8 @@ export const generateShadow = (elevation: number) => {
         shadowColor: '#000',
         shadowOffset: { width: 0, height: y },
         // @ts-ignore
-        shadowRadius: interpolate(s.blur, 1, 38, 1, 16).toFixed(2),
-        shadowOpacity: interpolate(depth - 1, 1, 24, 0.2, 0.25).toFixed(2),
+        shadowRadius: interpolate(s.blur, 1, 38, 1, 16),
+        shadowOpacity: interpolate(depth - 1, 1, 24, 0.2, 0.25),
         elevation: depth,
       }
     : {
