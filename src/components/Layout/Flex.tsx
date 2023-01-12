@@ -10,11 +10,19 @@ import type { Round } from '../../theme/round';
 import type { IntRange } from '../../utils/types';
 import type { RoundShape } from '../../utils/styles';
 
+export interface EdgeInsets {
+  paddingTop?: number;
+  paddingRight?: number;
+  paddingBottom?: number;
+  paddingLeft?: number;
+}
+
 interface NonAnimatedFlexProps {
   animatable?: never;
   direction?: 'column' | 'row';
   style?: ViewStyle | ViewStyle[];
   elevation?: IntRange<1, 25>;
+  // TODO: Refactor round for convenient. Refer to edgeInsets
   round?: Round;
   roundShape?: RoundShape;
   children?: Element | Element[] | ReactElement | ReactElement[] | undefined;
@@ -24,6 +32,7 @@ interface NonAnimatedFlexProps {
   flexGrow?: FlexStyle['flexGrow'];
   flexShrink?: FlexStyle['flexShrink'];
   flexWrap?: FlexStyle['flexWrap'];
+  edgeInsets?: EdgeInsets;
 }
 
 interface AnimatedFlexProps
@@ -43,6 +52,7 @@ export function Flex(props: FlexProps) {
     elevation,
     round,
     roundShape = 'all',
+    edgeInsets = {},
     ...rest
   } = props;
 
@@ -52,6 +62,7 @@ export function Flex(props: FlexProps) {
     flexDirection: direction,
     ...shadowStyle,
     ...roundStyle,
+    ...edgeInsets,
   };
 
   // highest priority && "as" to type

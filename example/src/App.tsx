@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, StyleSheet, Text, ViewStyle } from 'react-native';
-import { Column, Row, Spacer, storage } from 'react-native-good-ui';
+import { Column, Row, Spacer, storage, EdgeInsets } from 'react-native-good-ui';
 import {
   useSharedValue,
   useAnimatedStyle,
@@ -65,6 +65,19 @@ export default function App() {
         }}
         title="Move"
       />
+
+      <Spacer direction={'both'} preset={'large'} />
+
+      <Column
+        style={{ backgroundColor: 'red', width: 100, height: 100 }}
+        round={'medium'}
+        edgeInsets={EdgeInsets.bottom('medium')}
+      >
+        <Column
+          style={{ backgroundColor: 'yellow', width: 50, height: 50 }}
+          round={'small'}
+        />
+      </Column>
     </Column>
   );
 }
