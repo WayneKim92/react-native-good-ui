@@ -27,7 +27,7 @@ interface NonAnimatedFlexProps {
   roundShape?: RoundShape;
   children?: Element | Element[] | ReactElement | ReactElement[] | undefined;
   justifyContent?: FlexStyle['justifyContent'];
-  alignItems?: FlexStyle['justifyContent'];
+  alignItems?: FlexStyle['alignItems'];
   flexBasis?: FlexStyle['flexBasis'];
   flexGrow?: FlexStyle['flexGrow'];
   flexShrink?: FlexStyle['flexShrink'];
@@ -53,6 +53,12 @@ export function Flex(props: FlexProps) {
     round,
     roundShape = 'all',
     edgeInsets = {},
+    justifyContent,
+    alignItems,
+    flexBasis,
+    flexGrow,
+    flexShrink,
+    flexWrap,
     ...rest
   } = props;
 
@@ -60,6 +66,12 @@ export function Flex(props: FlexProps) {
   const roundStyle = generateRound(round, roundShape);
   const viewStyle: ViewStyle = {
     flexDirection: direction,
+    justifyContent,
+    alignItems,
+    flexBasis,
+    flexGrow,
+    flexShrink,
+    flexWrap,
     ...shadowStyle,
     ...roundStyle,
     ...edgeInsets,
