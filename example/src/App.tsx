@@ -71,7 +71,7 @@ export default function App() {
       <Column
         style={{ backgroundColor: 'red', width: 100, height: 100 }}
         round={'medium'}
-        edgeInsets={EdgeInsets.bottom('medium')}
+        edgeInsets={EdgeInsets.fromVH('medium', 'medium')}
       >
         <Column
           style={{ backgroundColor: 'yellow', width: 50, height: 50 }}
