@@ -33,6 +33,12 @@ interface NonAnimatedFlexProps {
   flexShrink?: FlexStyle['flexShrink'];
   flexWrap?: FlexStyle['flexWrap'];
   edgeInsets?: EdgeInsets;
+  // @ts-ignore
+  onLayout?: FlexProps['onLayout'];
+  // @ts-ignore
+  onMouseEnter?: FlexProps['onMouseEnter'];
+  // @ts-ignore
+  onMouseLeave?: FlexProps['onMouseLeave'];
 }
 
 interface AnimatedFlexProps

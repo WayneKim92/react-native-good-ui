@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { Button, StyleSheet, Text, ViewStyle } from 'react-native';
-import { Column, Row, Spacer, storage, EdgeInsets } from 'react-native-good-ui';
+import {
+  Column,
+  Row,
+  Spacer,
+  Select,
+  storage,
+  EdgeInsets,
+} from 'react-native-good-ui';
 import {
   useSharedValue,
   useAnimatedStyle,
@@ -44,12 +51,18 @@ export default function App() {
 
   return (
     <Column style={styles.container}>
-      <Spacer direction={'both'} preset={'huge'} />
+      <Select
+        width={200}
+        options={['옵션1', '옵션2', '옵션3', '옵션4', '옵션5', '옵션옵션옵션6']}
+        onSelect={(option) => console.log(option)}
+      />
 
+      <Spacer preset={'huge'} />
       <Text>{storageValue}</Text>
 
       <Spacer direction={'both'} preset={'huge'} />
-
+      <Text>애니메이션 체크</Text>
+      <Spacer direction={'both'} preset={'medium'} />
       <Row
         animatable={true}
         elevation={24}
@@ -57,7 +70,6 @@ export default function App() {
         roundShape={'all'}
         style={[styles.box, animatedStyles]}
       />
-
       <Spacer direction={'both'} preset={'large'} />
       <Button
         onPress={() => {
@@ -67,16 +79,14 @@ export default function App() {
       />
 
       <Spacer direction={'both'} preset={'large'} />
-
+      <Text>레이아웃 체크</Text>
+      <Spacer direction={'both'} preset={'medium'} />
       <Column
-        style={{ backgroundColor: 'red', width: 100, height: 100 }}
+        style={styles.layout1}
         round={'medium'}
         edgeInsets={EdgeInsets.fromVH('medium', 'medium')}
       >
-        <Column
-          style={{ backgroundColor: 'yellow', width: 50, height: 50 }}
-          round={'small'}
-        />
+        <Column style={styles.layout2} round={'small'} />
       </Column>
     </Column>
   );
@@ -95,5 +105,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#6DB32A',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  layout1: {
+    backgroundColor: 'red',
+    width: 100,
+    height: 100,
+  },
+  layout2: {
+    backgroundColor: 'yellow',
+    width: 50,
+    height: 50,
   },
 });
