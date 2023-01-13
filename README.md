@@ -20,7 +20,7 @@ yarn add react-native-good-ui
 ```jsx
 import { Text } from 'react-native';
 
-import { Spacer, Column, Row } from 'react-native-good-ui';
+import { Spacer, Column, Row, Select } from 'react-native-good-ui';
 import { storage } from 'react-native-good-ui';
 
 function AComponent() {
@@ -33,6 +33,8 @@ function AComponent() {
       <Text>Hello</Text>
       <Text>Wayne</Text>
     </Row>
+
+    <Select options={['option 1', 'option 2']}/>
   </Column>
 }
 ```

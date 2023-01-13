@@ -53,7 +53,15 @@ export default function App() {
     <Column style={styles.container}>
       <Select
         width={200}
-        options={['옵션1', '옵션2', '옵션3', '옵션4', '옵션5', '옵션옵션옵션6']}
+        options={[
+          'Option 1',
+          'Option 2',
+          'Option 3',
+          'Option 4',
+          'Option 5',
+          'Option 6',
+          'Option 7',
+        ]}
         onSelect={(option) => console.log(option)}
       />
 
