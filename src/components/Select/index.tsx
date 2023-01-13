@@ -10,6 +10,8 @@ import {
 import { Column, Row } from '../Layout';
 import { EdgeInsets } from '../../utils';
 
+// TODO: Support mobile
+
 // @ts-ignore
 const NonSelectionText = ({ children, ...otherProps }: TextProps) => (
   <Text
