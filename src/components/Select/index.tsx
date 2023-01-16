@@ -7,8 +7,11 @@ import {
   StyleSheet,
   TextProps,
 } from 'react-native';
-import { Column, Row } from '../Layout';
 import { EdgeInsets } from '../../utils';
+import { zIndex } from '../../theme';
+import { Column, Row } from '../Layout';
+import { Icon } from '../Icon';
+import { Spacer } from '../Spacer';
 
 // TODO: Support mobile
 
@@ -39,7 +42,7 @@ interface SelectProps {
 
 export function Select(props: SelectProps) {
   const {
-    autoOptionsOpen = true,
+    autoOptionsOpen = false,
     width = 'auto',
     options,
     onPress,
@@ -68,9 +71,9 @@ export function Select(props: SelectProps) {
       onMouseLeave={() => autoOptionsOpen && setOptionVisible(false)}
     >
       <Pressable onPress={onSelectPress}>
-        <Column
+        <Row
           edgeInsets={commonEdgeInsets}
-          justifyContent={'center'}
+          alignItems={'center'}
           style={[
             styles.selectContainer,
             { width: width === 'auto' ? undefined : width },
@@ -78,7 +81,11 @@ export function Select(props: SelectProps) {
           onLayout={processOptionTopPosition}
         >
           <NonSelectionText>{currentOption}</NonSelectionText>
-        </Column>
+          <Spacer flex={1} />
+          <Icon
+            icon={optionVisible ? 'arrowDropUpFilled' : 'arrowDropDownFilled'}
+          />
+        </Row>
       </Pressable>
 
       {optionVisible ? (
@@ -106,7 +113,7 @@ export function Select(props: SelectProps) {
 
 const styles = StyleSheet.create({
   container: {
-    zIndex: 1,
+    zIndex: zIndex.float,
   },
   selectContainer: {
     borderBottomWidth: 1,
