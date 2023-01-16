@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
   },
   optionContainer: {
     position: 'absolute',
-    width: '100%',
+    width: Platform.OS === 'web' ? '100%' : undefined,
     backgroundColor: 'white',
   },
   option: {
