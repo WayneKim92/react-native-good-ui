@@ -5,6 +5,7 @@ import {
   Row,
   Spacer,
   Select,
+  Input,
   storage,
   EdgeInsets,
 } from 'react-native-good-ui';
@@ -65,6 +66,8 @@ export default function App() {
         onSelect={(option) => console.log(option)}
       />
 
+      <Spacer preset={'huge'} />
+      <Input />
       <Spacer preset={'huge'} />
       <Text>{storageValue}</Text>
 
