@@ -11,7 +11,7 @@ interface InputProps {
 }
 
 export function Input(props: InputProps) {
-  const { value, onSubmit } = props;
+  const { placeholder, value, onSubmit } = props;
 
   const [currentValue, setCurrentValue] = useState(value);
 
@@ -33,7 +33,7 @@ export function Input(props: InputProps) {
       style={styles.container}
     >
       <TextInput
-        placeholder={'검색어 입력'}
+        placeholder={placeholder}
         style={textInputStyle}
         value={currentValue || ''}
         onChangeText={(changedText) => setCurrentValue(changedText)}
