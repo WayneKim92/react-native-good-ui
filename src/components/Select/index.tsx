@@ -1,34 +1,13 @@
 import React, { useState } from 'react';
-import {
-  Pressable,
-  Text,
-  ViewStyle,
-  Platform,
-  StyleSheet,
-  TextProps,
-} from 'react-native';
+import { Pressable, ViewStyle, Platform, StyleSheet } from 'react-native';
 import { EdgeInsets } from '../../utils';
 import { colors, ZIndex } from '../../theme';
 import { Column, Row } from '../Layout';
 import { Icon } from '../Icon';
 import { Spacer } from '../Spacer';
+import { NonSelectionText } from '../Text';
 
 // TODO: Support mobile
-
-// @ts-ignore
-const NonSelectionText = ({ children, ...otherProps }: TextProps) => (
-  <Text
-    // @ts-ignore
-    style={Platform.select({
-      web: {
-        userSelect: 'none',
-      },
-    })}
-    {...otherProps}
-  >
-    {children}
-  </Text>
-);
 
 interface SelectProps {
   autoOptionsOpen?: boolean;

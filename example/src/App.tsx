@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Button, StyleSheet, Text, ViewStyle } from 'react-native';
+import { StyleSheet, Text, ViewStyle } from 'react-native';
 import {
+  Button,
   Column,
   Row,
   Spacer,
@@ -86,7 +87,7 @@ export default function App() {
         onPress={() => {
           offset.value = withSpring(Math.random() * 255);
         }}
-        title="Move"
+        text="Move"
       />
 
       <Spacer direction={'both'} preset={'large'} />
