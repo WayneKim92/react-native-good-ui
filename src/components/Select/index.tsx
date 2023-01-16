@@ -8,7 +8,7 @@ import {
   TextProps,
 } from 'react-native';
 import { EdgeInsets } from '../../utils';
-import { colors, zIndex } from '../../theme';
+import { colors, ZIndex } from '../../theme';
 import { Column, Row } from '../Layout';
 import { Icon } from '../Icon';
 import { Spacer } from '../Spacer';
@@ -113,7 +113,7 @@ export function Select(props: SelectProps) {
 
 const styles = StyleSheet.create({
   container: {
-    zIndex: zIndex.float,
+    zIndex: ZIndex.float,
   },
   selectContainer: {
     borderBottomWidth: 1,
