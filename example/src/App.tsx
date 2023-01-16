@@ -67,7 +67,7 @@ export default function App() {
       />
 
       <Spacer preset={'huge'} />
-      <Input />
+      <Input placeholder={'입력'} />
       <Spacer preset={'huge'} />
       <Text>{storageValue}</Text>
 

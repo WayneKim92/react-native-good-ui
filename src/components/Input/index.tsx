@@ -21,7 +21,7 @@ export function Input(props: InputProps) {
 
   const textInputStyle = {
     color:
-      currentValue === ''
+      currentValue === '' || currentValue === undefined
         ? colors.palette.neutral500
         : colors.palette.neutral900,
   };
