@@ -8,7 +8,7 @@ import {
   TextProps,
 } from 'react-native';
 import { EdgeInsets } from '../../utils';
-import { zIndex } from '../../theme';
+import { colors, zIndex } from '../../theme';
 import { Column, Row } from '../Layout';
 import { Icon } from '../Icon';
 import { Spacer } from '../Spacer';
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   },
   selectContainer: {
     borderBottomWidth: 1,
-    borderBottomColor: 'gray',
+    borderBottomColor: colors.palette.neutral300,
   },
   optionContainer: {
     position: 'absolute',
@@ -126,6 +126,6 @@ const styles = StyleSheet.create({
   },
   option: {
     borderBottomWidth: 1,
-    borderColor: 'gary',
+    borderColor: colors.palette.neutral300,
   },
 });
