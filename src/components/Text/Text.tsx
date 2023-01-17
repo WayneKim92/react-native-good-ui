@@ -1,5 +1,9 @@
 import React from 'react';
-import { Text as RNText, TextStyle } from 'react-native';
+import {
+  Text as RNText,
+  TextProps as RNTextProps,
+  TextStyle,
+} from 'react-native';
 
 type TextPreset =
   | 'body1'
@@ -19,7 +23,7 @@ type TextStyles = {
   [key in TextPreset]: TextStyle;
 };
 
-interface TextProps extends TextStyle {
+interface TextProps extends RNTextProps {
   preset?: TextPreset;
   style?: TextStyle;
   children: string;
