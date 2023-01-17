@@ -34,7 +34,7 @@ export function Input(props: InputProps) {
     >
       <TextInput
         placeholder={placeholder}
-        style={textInputStyle}
+        style={[styles.textInput, textInputStyle]}
         value={currentValue || ''}
         onChangeText={(changedText) => setCurrentValue(changedText)}
         onSubmitEditing={onSubmitEditing}
@@ -47,5 +47,8 @@ const styles = StyleSheet.create({
   container: {
     borderBottomWidth: 1,
     borderColor: colors.palette.neutral300,
+  },
+  textInput: {
+    width: '100%',
   },
 });

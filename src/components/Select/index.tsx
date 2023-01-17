@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Pressable, ViewStyle, Platform, StyleSheet } from 'react-native';
+import { Pressable, ViewStyle, StyleSheet } from 'react-native';
 import { EdgeInsets } from '../../utils';
 import { colors, ZIndex } from '../../theme';
 import { Column, Row } from '../Layout';
@@ -23,6 +23,7 @@ export function Select(props: SelectProps) {
   const {
     autoOptionsOpen = false,
     width = 'auto',
+    style,
     options,
     onPress,
     onSelect,
@@ -34,7 +35,7 @@ export function Select(props: SelectProps) {
 
   const commonEdgeInsets = EdgeInsets.fromVH('small', 'small');
   const processOptionTopPosition = (event: {
-    nativeEvent: { layout: { height: any } };
+    nativeEvent: { layout: { height: any; width: any } };
   }) => {
     setOptionTopPosition(event.nativeEvent.layout.height);
   };
@@ -45,7 +46,7 @@ export function Select(props: SelectProps) {
 
   return (
     <Column
-      style={styles.container}
+      style={[styles.container, style]}
       onMouseEnter={() => autoOptionsOpen && setOptionVisible(true)}
       onMouseLeave={() => autoOptionsOpen && setOptionVisible(false)}
     >
@@ -68,7 +69,13 @@ export function Select(props: SelectProps) {
       </Pressable>
 
       {optionVisible ? (
-        <Column style={[styles.optionContainer, { top: optionTopPosition }]}>
+        <Column
+          style={[
+            styles.optionContainer,
+            { top: optionTopPosition },
+            { width: width === 'auto' ? undefined : width },
+          ]}
+        >
           {options.map((option, index) => (
             <Pressable
               // @ts-ignore
@@ -97,11 +104,12 @@ const styles = StyleSheet.create({
   selectContainer: {
     borderBottomWidth: 1,
     borderBottomColor: colors.palette.neutral300,
+    backgroundColor: colors.palette.neutral100,
   },
   optionContainer: {
     position: 'absolute',
-    width: Platform.OS === 'web' ? '100%' : undefined,
-    backgroundColor: 'white',
+    width: '100%',
+    backgroundColor: colors.palette.neutral100,
   },
   option: {
     borderBottomWidth: 1,
