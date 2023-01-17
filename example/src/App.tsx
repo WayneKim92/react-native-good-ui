@@ -74,6 +74,10 @@ export default function App() {
 
       <Spacer preset={'huge'} />
 
+      <Text preset={'header5'}>Button</Text>
+      <Button text={'Button'} onPress={() => console.log('onPress')} />
+
+      <Spacer preset={'huge'} />
       <Text preset={'header5'}>Input</Text>
       <Input placeholder={'입력'} />
 
