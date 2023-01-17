@@ -19,7 +19,7 @@ type TextStyles = {
   [key in TextPreset]: TextStyle;
 };
 
-interface TextProps {
+interface TextProps extends TextStyle {
   preset?: TextPreset;
   style?: TextStyle;
   children: string;
@@ -101,9 +101,13 @@ const presetStyles: TextStyles = {
 };
 
 export function Text(props: TextProps) {
-  const { preset = 'body1', style, children } = props;
+  const { preset = 'body1', style, children, ...otherProps } = props;
 
   const textStyle = [presetStyles[preset], style];
 
-  return <RNText style={textStyle}>{children}</RNText>;
+  return (
+    <RNText style={textStyle} {...otherProps}>
+      {children}
+    </RNText>
+  );
 }
