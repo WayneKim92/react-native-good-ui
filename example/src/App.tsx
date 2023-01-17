@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, ViewStyle } from 'react-native';
+import { StyleSheet, ViewStyle } from 'react-native';
 import {
   Button,
   Column,
-  Row,
-  Spacer,
-  Select,
-  Input,
-  storage,
   EdgeInsets,
+  Input,
+  Row,
+  Select,
+  Spacer,
+  Text,
+  ZIndex,
+  storage,
 } from 'react-native-good-ui';
 import {
   useSharedValue,
@@ -51,29 +53,37 @@ export default function App() {
     } as AnimateStyle<ViewStyle>;
   });
 
-  return (
-    <Column style={styles.container}>
+  const body = (
+    <React.Fragment>
+      <Text preset={'header3'}>Components</Text>
+
+      <Spacer preset={'large'} />
+
+      <Text preset={'header5'}>Select</Text>
       <Select
-        width={200}
-        options={[
-          'Option 1',
-          'Option 2',
-          'Option 3',
-          'Option 4',
-          'Option 5',
-          'Option 6',
-          'Option 7',
-        ]}
+        width={150}
+        options={['Option 1', 'Option 2', 'Option 3']}
+        style={{ zIndex: ZIndex.float + 1 }}
+        onSelect={(option) => console.log(option)}
+      />
+
+      <Select
+        options={['옵션 1', '옵션 2', '옵션 3']}
         onSelect={(option) => console.log(option)}
       />
 
       <Spacer preset={'huge'} />
+
+      <Text preset={'header5'}>Input</Text>
       <Input placeholder={'입력'} />
+
       <Spacer preset={'huge'} />
+      <Text preset={'header5'}>Storage</Text>
       <Text>{storageValue}</Text>
 
-      <Spacer direction={'both'} preset={'huge'} />
-      <Text>애니메이션 체크</Text>
+      <Spacer preset={'huge'} />
+
+      <Text preset={'header5'}>Animated View</Text>
       <Spacer direction={'both'} preset={'medium'} />
       <Row
         animatable={true}
@@ -82,17 +92,18 @@ export default function App() {
         roundShape={'all'}
         style={[styles.box, animatedStyles]}
       />
-      <Spacer direction={'both'} preset={'large'} />
+      <Spacer preset={'large'} />
       <Button
         onPress={() => {
           offset.value = withSpring(Math.random() * 255);
         }}
-        text="Move"
+        text={'Move'}
       />
 
-      <Spacer direction={'both'} preset={'large'} />
-      <Text>레이아웃 체크</Text>
-      <Spacer direction={'both'} preset={'medium'} />
+      <Spacer preset={'large'} />
+
+      <Text preset={'header5'}>Layout</Text>
+      <Spacer preset={'medium'} />
       <Column
         style={styles.layout1}
         round={'medium'}
@@ -100,15 +111,46 @@ export default function App() {
       >
         <Column style={styles.layout2} round={'small'} />
       </Column>
-    </Column>
+
+      <Spacer preset={'large'} />
+
+      <Text preset={'header5'}>Text</Text>
+      <Text preset={'header1'}>header1</Text>
+      <Text preset={'header2'}>header2</Text>
+      <Text preset={'header3'}>header3</Text>
+      <Text preset={'header4'}>header4</Text>
+      <Text preset={'header5'}>header5</Text>
+      <Text preset={'header6'}>header6</Text>
+      <Text preset={'subtitle1'}>subtitle1</Text>
+      <Text preset={'subtitle2'}>subtitle2</Text>
+      <Text preset={'body1'}>body1</Text>
+      <Text preset={'body2'}>body2</Text>
+      <Text preset={'caption'}>caption</Text>
+      <Text preset={'overline'}>overline</Text>
+    </React.Fragment>
+  );
+
+  return (
+    <Row>
+      <Column style={styles.container} edgeInsets={EdgeInsets.right('medium')}>
+        {body}
+      </Column>
+      <Column style={styles.container2}>{body}</Column>
+    </Row>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexShrink: 1,
+    alignItems: 'stretch',
+    backgroundColor: 'white',
+  },
+  container2: {
+    flex: 1,
+    flexShrink: 1,
+    alignItems: 'flex-start',
     backgroundColor: 'white',
   },
   box: {

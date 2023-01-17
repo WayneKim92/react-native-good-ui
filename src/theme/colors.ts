@@ -1,4 +1,6 @@
-// TODO: write documentation for colors and palette in own markdown file and add links from here
+// TODO:
+//  write documentation for colors and palette in own markdown file and add links from here
+//  implement ThemeProvider to be able to customize themes
 
 const palette = {
   neutral100: '#FFFFFF',
