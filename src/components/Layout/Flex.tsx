@@ -17,7 +17,7 @@ export interface EdgeInsets {
   paddingLeft?: number;
 }
 
-interface NonAnimatedFlexProps {
+export interface NonAnimatedFlexProps {
   animatable?: never;
   direction?: 'column' | 'row';
   style?: ViewStyle | ViewStyle[];

@@ -23,6 +23,7 @@ import { StyleSheet, ViewStyle } from 'react-native';
 import {
   Button,
   Column,
+  Divider,
   EdgeInsets,
   Input,
   Row,
@@ -78,6 +79,22 @@ export default function App() {
       <Text preset={'header3'}>Components</Text>
 
       <Spacer preset={'large'} />
+
+      <Text preset={'header5'}>Divider</Text>
+
+      <Divider />
+      <Divider text={'message'} textEdgeInsets={'medium'} />
+
+      <Column style={{ height: 200 }} alignItems={'center'}>
+        <Divider
+          direction={'vertical'}
+          text={'Message'}
+          textEdgeInsets={'small'}
+        />
+      </Column>
+      <Divider direction={'vertical'} />
+
+      <Spacer preset={'huge'} />
 
       <Text preset={'header5'}>Select</Text>
       <Select
@@ -195,6 +212,7 @@ const styles = StyleSheet.create({
     height: 50,
   },
 });
+
 ```
 
 ## Contributing

@@ -23,10 +23,8 @@ type TextStyles = {
   [key in TextPreset]: TextStyle;
 };
 
-interface TextProps extends RNTextProps {
+export interface TextProps extends RNTextProps {
   preset?: TextPreset;
-  style?: TextStyle;
-  children: string;
 }
 
 const presetStyles: TextStyles = {
