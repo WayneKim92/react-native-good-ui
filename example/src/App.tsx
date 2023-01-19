@@ -72,7 +72,13 @@ export default function App() {
           textEdgeInsets={'small'}
         />
       </Column>
-      <Divider direction={'vertical'} />
+      <Divider />
+
+      <Row style={{ height: 100 }}>
+        <Divider direction={'vertical'} />
+        <Spacer preset={'medium'} />
+        <Divider direction={'vertical'} />
+      </Row>
 
       <Spacer preset={'huge'} />
 

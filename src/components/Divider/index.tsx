@@ -26,8 +26,8 @@ export function Divider(props: DividerProps) {
   } = props;
 
   const containerStyle: ViewStyle = {
-    flexGrow: 1,
-    flexShrink: 1,
+    flexGrow: direction === 'vertical' && text ? 1 : undefined,
+    flexShrink: direction === 'vertical' && text ? 1 : undefined,
     justifyContent: 'center',
     alignItems: 'center',
     width: direction === 'vertical' ? 'auto' : '100%',
