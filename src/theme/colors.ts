@@ -14,9 +14,9 @@ const palette = {
   neutral900: '#000000',
 
   primary100: '#F8FFEA',
-  primary200: '#D0FDA4',
-  primary300: '#ABF767',
-  primary400: '#91DA4E',
+  primary200: '#E1FDDA',
+  primary300: '#C9FF99',
+  primary400: '#AAF268',
   primary500: '#6DB32A',
 
   secondary100: '#DCDDE9',
