@@ -86,8 +86,8 @@ export function Icon(props: IconProps) {
 }
 
 export const iconRegistry = {
-  arrowDropDownFilled: require('../../assets/icons/arrowDropDownFilled.png'),
-  arrowDropUpFilled: require('../../assets/icons/arrowDropUpFilled.png'),
+  arrowDropDownFilled: require('../../assets/icons/arrow-drop-down-filled.png'),
+  arrowDropUpFilled: require('../../assets/icons/arrow-drop-up-filled.png'),
 };
 
 const $imageStyle: ImageStyle = {
