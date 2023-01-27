@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import type { ComponentType } from 'react';
+
 export type IconTypes = keyof typeof iconRegistry;
 
 interface IconProps extends TouchableOpacityProps {
@@ -88,6 +89,7 @@ export function Icon(props: IconProps) {
 export const iconRegistry = {
   arrowDropDownFilled: require('../../assets/icons/arrow-drop-down-filled.png'),
   arrowDropUpFilled: require('../../assets/icons/arrow-drop-up-filled.png'),
+  helpFilled: require('../../assets/icons/help-filled.png'),
 };
 
 const $imageStyle: ImageStyle = {

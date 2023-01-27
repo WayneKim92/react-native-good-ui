@@ -11,6 +11,7 @@ import {
   Spacer,
   Text,
   ZIndex,
+  Icon,
   storage,
 } from 'react-native-good-ui';
 import {
@@ -154,6 +155,15 @@ export default function App() {
       <Text preset={'body2'}>body2</Text>
       <Text preset={'caption'}>caption</Text>
       <Text preset={'overline'}>overline</Text>
+
+      <Spacer preset={'large'} />
+
+      <Text preset={'header5'}>Icons</Text>
+      <Row>
+        <Icon icon={'arrowDropDownFilled'} />
+        <Icon icon={'arrowDropUpFilled'} />
+        <Icon icon={'helpFilled'} />
+      </Row>
     </React.Fragment>
   );
 
