@@ -2,6 +2,8 @@
 
 good UI that supports react-native based android, ios and web
 
+![화면 기록 2024-03-02 오전 1 16 48](https://github.com/WayneKim92/good-ui/assets/75321423/84dc872a-6369-4da7-aa91-9c567c26ca4e)
+
 ## Requirement
 ```sh
 # Enter commend in root directory at your react-native project
