@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, ViewStyle } from 'react-native';
+import { ScrollView, StyleSheet, ViewStyle } from 'react-native';
 import {
   Button,
   Column,
@@ -168,12 +168,17 @@ export default function App() {
   );
 
   return (
-    <Row>
-      <Column style={styles.container} edgeInsets={EdgeInsets.right('medium')}>
-        {body}
-      </Column>
-      <Column style={styles.container2}>{body}</Column>
-    </Row>
+    <ScrollView>
+      <Row>
+        <Column
+          style={styles.container}
+          edgeInsets={EdgeInsets.right('medium')}
+        >
+          {body}
+        </Column>
+        <Column style={styles.container2}>{body}</Column>
+      </Row>
+    </ScrollView>
   );
 }
 

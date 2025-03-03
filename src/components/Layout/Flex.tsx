@@ -5,7 +5,7 @@ import { generateRound, generateShadow } from '../../utils/styles';
 
 import type { ReactElement } from 'react';
 import type { ViewStyle, FlexStyle } from 'react-native';
-import type { AnimatedStyle } from 'react-native-reanimated/lib/types';
+import type { AnimatedStyle } from 'react-native-reanimated';
 import type { Round } from '../../theme/round';
 import type { IntRange } from '../../utils/types';
 import type { RoundShape } from '../../utils/styles';
