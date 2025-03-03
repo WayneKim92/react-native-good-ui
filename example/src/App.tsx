@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ScrollView, StyleSheet, ViewStyle } from 'react-native';
+import React from 'react';
+import { ScrollView, StyleSheet } from 'react-native';
 import {
   Button,
   Column,
@@ -12,7 +12,6 @@ import {
   Text,
   ZIndex,
   Icon,
-  storage,
 } from 'react-native-good-ui';
 import {
   useSharedValue,
@@ -20,39 +19,13 @@ import {
   withSpring,
 } from 'react-native-reanimated';
 
-import type { AnimateStyle } from 'react-native-reanimated';
-
-const storageKey = '@storage_test';
-
 export default function App() {
-  const [storageValue, setStorageValue] = useState('');
-
-  React.useEffect(() => {
-    const fetch = async () => {
-      const aStorage = await storage.load(storageKey);
-
-      if (aStorage) {
-        setStorageValue(
-          `Storage Value : ${aStorage}, but it will be removed  in the next run.`
-        );
-        await storage.remove(storageKey);
-      } else {
-        await storage.save(storageKey, 'hello world');
-        setStorageValue(
-          `Storage Value : null,  but It will be present in the next run.`
-        );
-      }
-    };
-
-    fetch().then();
-  }, []);
-
   const offset = useSharedValue(0);
 
   const animatedStyles = useAnimatedStyle(() => {
     return {
       transform: [{ translateX: offset.value }],
-    } as AnimateStyle<ViewStyle>;
+    };
   });
 
   const body = (
@@ -107,7 +80,6 @@ export default function App() {
 
       <Spacer preset={'huge'} />
       <Text preset={'header5'}>Storage</Text>
-      <Text>{storageValue}</Text>
 
       <Spacer preset={'huge'} />
 
