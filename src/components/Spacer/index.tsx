@@ -5,7 +5,6 @@
 import React from 'react';
 import { View, ViewStyle } from 'react-native';
 import { Spacing, spacing } from '../../theme';
-import { isNilOrEmpty } from '../../utils';
 
 interface SpacerDirection {
   /**
@@ -73,10 +72,6 @@ export function Spacer(props: SpacerProps) {
     height:
       direction === 'both' || direction === 'vertical' ? value : undefined,
   };
-
-  if (__DEV__ && isNilOrEmpty(value)) {
-    console.warn(`Spacer component's value is nil or empty!`);
-  }
 
   return <View style={style} {...rest} />;
 }
