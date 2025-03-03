@@ -23,7 +23,7 @@ export function Select(props: SelectProps) {
   const {
     autoOptionsOpen = false,
     width = 'auto',
-    style,
+    style = {},
     options,
     onPress,
     onSelect,

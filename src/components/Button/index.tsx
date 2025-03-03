@@ -20,7 +20,7 @@ interface ButtonProps {
 }
 
 export function Button(props: ButtonProps) {
-  const { text, onPress, round = 'small', style } = props;
+  const { text, onPress, round = 'small', style = {} } = props;
 
   const sharedOpacity = useSharedValue(1);
   const animatedStyle = useAnimatedStyle(() => ({
